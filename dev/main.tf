@@ -1,5 +1,5 @@
 module "vpc" {
-    source = "/home/ec2-user/terraform_web_module/modules/vpc/vpc_v3"
+    source = "/home/ec2-user/terraform_web_module/modules/vpc"
 
 env = "dev"
 vpc_cidr = "10.0.0.0/16"
@@ -15,7 +15,7 @@ project = "project"
 }
 
 module "alb" {
-    source = "/home/ec2-user/terraform_web_module/modules/alb/aws_alb_v2"
+    source = "/home/ec2-user/terraform_web_module/modules/aws_alb_v2"
     vpc_id = module.vpc.vpc_id
     public_subnet = module.vpc.public_subnet[*]
     env = "dev"
