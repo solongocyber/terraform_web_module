@@ -40,7 +40,7 @@ variable "protocol" {
 
 variable  "ports" {
     type = list(string)
-    default = [ "80" , "443" ,"22" ]
+    default = [ "80" , "443"  ]
 }
 
 variable  "egress_port" {
@@ -88,4 +88,9 @@ variable "alb_tg" {
 variable "ami" {
     type = string
     default = "ami-0f924dc71d44d23e2"
+}
+
+variable "sg_id"{
+    type = string
+    default = "sg_id"
 }
