@@ -30,4 +30,11 @@ module "auto_scaling" {
   vpc_id = module.vpc.vpc_id
   ami = "ami-0f924dc71d44d23e2"
   public_subnet = module.vpc.public_subnet[*]
+  private_subnet = module.vpc.private_subnet[*]
+  sg_id = module.security_group.sg_id
+}
+
+module "security_group" {
+  source = "/home/ec2-user/terraform_web_module/modules/security_group"
+  vpc_id = module.vpc.vpc_id
 }
