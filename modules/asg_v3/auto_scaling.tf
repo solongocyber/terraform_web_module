@@ -8,7 +8,7 @@ resource "aws_autoscaling_group" "asg_v3" {
   force_delete              = var.env == "dev" ? true : false
   launch_configuration      = aws_launch_configuration.launch_conf_v3.name
   vpc_zone_identifier       = var.public_subnet[*]
-
+  
 }
 
 resource "aws_autoscaling_policy" "scaling_up" {
